@@ -12,7 +12,7 @@ spec:
         app: httpd-app1
     spec:
       containers:
-      - image: http:latest
+      - image: httpd:latest
         name: http
         ports:
         - containerPort: 80
@@ -31,7 +31,7 @@ spec:
         app: httpd-app2
     spec:
       containers:
-      - image: http:latest
+      - image: httpd:latest
         name: http
         ports:
         - containerPort: 80
