@@ -1,0 +1,32 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: ingress-app1
+spec:
+  rules:
+  - host: app1.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: httpd-app-svc1
+          servicePort: 80
+        path: /
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: ingress-app2
+spec:
+  rules:
+  - host: app2.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: httpd-app-svc2
+          servicePort: 80
+        path: /

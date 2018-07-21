@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: httpd-app1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: httpd-app1
+      labels:
+        app: httpd-app1
+    spec:
+      containers:
+      - image: http:latest
+        name: http
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: httpd-app2
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: httpd-app2
+      labels:
+        app: httpd-app2
+    spec:
+      containers:
+      - image: http:latest
+        name: http
+        ports:
+        - containerPort: 80
